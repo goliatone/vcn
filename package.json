@@ -1,0 +1,49 @@
+{
+  "name": "vecna",
+  "description": "Dumb [quasy] secret manager",
+  "version": "0.1.0",
+  "homepage": "https://github.com/eburgos/vecna",
+  "author": {
+    "name": "goliatone",
+    "email": "hello@goliatone.com",
+    "url": "http://goliatone.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eburgos/vecna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eburgos/vecna/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/eburgos/vecna/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index",
+  "bin": "bin/vecna",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/*_test.js",
+    "dtest": "./node_modules/mocha/bin/mocha test/*_test.js -G -w --reporter spec --slow 500"
+  },
+  "dependencies": {
+    "aws-credentials": "0.0.1",
+    "bluebird": "^3.0.5",
+    "gextend": "^0.1.6",
+    "knox": "^0.9.2",
+    "tmp": "0.0.28",
+    "yargonaut": "^1.1.2",
+    "yargs": "^3.30.0"
+  },
+  "devDependencies": {
+    "mocha-sinon": "^1.1.4",
+    "chai": "^2.2.0",
+    "sinon": "^1.14.1",
+    "mocha": "^2.2.4"
+  },
+  "keywords": []
+}
