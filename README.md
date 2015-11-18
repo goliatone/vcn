@@ -1,13 +1,53 @@
-# vecna
+# vcn
 
-Dumb [quasy] secret manager
+Dumb [quasy] secret manager.
+
+**vecna**:
+> The fictional character Vecna (/ˈvɛk nɑː/ vek-nah[1]) has been named as one of the greatest villains in the Dungeons & Dragons roleplaying game.
+
+
+> He is primarily the god of secrets.
+
+This is as secure as your AWS credential management policy :) It's in the roadmap to integrate AWS KMS.
 
 ## Getting Started
-Install the module with: `npm install vecna`
+
+Install the module with: `npm install -g vcn`
+
+You can use `vcn` through the CLI:
+
+```
+vcn put -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
+```
+
+```
+vcn get -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
+```
+
+You can also use it programmatically.
+
+To store a file:
 
 ```javascript
-var vecna = require('vecna');
-vecna.awesome(); // "awesome"
+var Vcn = require('vcn');
+
+var test = new Vcn({
+    bucket: 'goliatone.vecna.io'
+});
+
+test.put('envset', 'Pa$sW07d' , '/Users/goliatone/Development/menagerie/.envset').then(function(){
+     console.log('Put file success');
+});
+```
+
+
+To retrieve the file:
+```js
+//
+test.get('envset', 'Pa$sW07d').then(function(file){
+    console.log('Get file success', file);
+});
+
 ```
 
 ## Documentation
