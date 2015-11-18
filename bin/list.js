@@ -3,17 +3,27 @@
 var Table = require('cli-table');
 
 
-module.exports = function(data){
-    // instantiate
-    var table = new Table({
-        head: ['Path', 'Date'],
-        colWidths: [40, 50]
-    });
+module.exports = function(fields){
 
-    var out = [];
-    data.map(function(file){
-        table.push([file.Key, file.LastModified]);
-    });
+    var headers = Object.keys(fields);
 
-    console.log(table.toString());
+    return function(data){
+
+        var table = new Table({
+            head: headers,
+            colWidths: [40, 50]
+        });
+
+        var out;
+        data.map(function(file){
+            out = [];
+            Object.keys(fields).map(function(field){
+                out.push(file[fields[field]]);
+            });
+
+            table.push(out);
+        });
+
+        console.log(table.toString());
+    };
 };
