@@ -11,7 +11,14 @@ vecna.awesome(); // "awesome"
 ```
 
 ## Documentation
-_(Coming soon)_
+
+```
+vecna put -b goliatone.vecna.io --password Pa$sW07d --filepath .envset
+```
+
+```
+vecna get -b goliatone.vecna.io --password Pa$sW07d --id .envset
+```
 
 ## Examples
 _(Coming soon)_
