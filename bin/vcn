@@ -71,5 +71,9 @@ if(argv.filepath) argv.filepath = resolve(argv.filepath);
 var cmd = argv._[0];
 Vcn.exec(cmd, argv).then(function(data){
     if(cmd !== 'list') return;
-    require('./list')(data);
+
+    require('./list')({
+        'Path': 'Key',
+        'Date': 'LastModified'
+    })(data);
 });
