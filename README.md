@@ -13,11 +13,11 @@ vecna.awesome(); // "awesome"
 ## Documentation
 
 ```
-vecna put -b goliatone.vecna.io --password Pa$sW07d --filepath .envset
+vcn put -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
 ```
 
 ```
-vecna get -b goliatone.vecna.io --password Pa$sW07d --id .envset
+vcn get -b goliatone.vecna.io --password Pa$sW07d --id envset
 ```
 
 ## Examples
