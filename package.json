@@ -2,7 +2,7 @@
   "name": "vcn",
   "description": "Dumb [quasy] secret manager",
   "version": "0.1.0",
-  "homepage": "https://github.com/eburgos/vecna",
+  "homepage": "https://github.com/eburgos/vcn",
   "author": {
     "name": "goliatone",
     "email": "hello@goliatone.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/eburgos/vecna.git"
+    "url": "git://github.com/eburgos/vcn.git"
   },
   "bugs": {
-    "url": "https://github.com/eburgos/vecna/issues"
+    "url": "https://github.com/eburgos/vcn/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/eburgos/vecna/blob/master/LICENSE-MIT"
+      "url": "https://github.com/eburgos/vcn/blob/master/LICENSE-MIT"
     }
   ],
   "main": "index",
