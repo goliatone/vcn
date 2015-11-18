@@ -17,7 +17,7 @@ vcn put -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
 ```
 
 ```
-vcn get -b goliatone.vecna.io --password Pa$sW07d --id envset
+vcn get -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
 ```
 
 ## Examples
