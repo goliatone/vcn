@@ -15,12 +15,15 @@ require('yargonaut')
   .style('yellow', 'required');
 
 
-var resolve = require('path').resolve;
+var resolve = require('path').resolve,
+    Vcn = require('../lib');
 
 var argv = require('yargs')
     .usage('Usage: $0 <command> [options]')
     .command('put', 'Encrypt and store file in bucket')
     .command('get', 'Retrieve and decrypt file from bucket')
+    .command('del', 'Delete file from bucket')
+    .command('list', 'List files bucket')
     .option('b',{
         alias:'bucket',
         describe: 'Bucket name',
@@ -31,13 +34,19 @@ var argv = require('yargs')
         alias:'filepath',
         describe: 'Path to write or read file',
         type: 'string',
-        required: true
+        required: false
     })
     .option('i', {
         alias: 'id',
         describe: 'Secret identifier',
         type: 'string',
         required: true
+    })
+    .option('g', {
+        alias: 'group-id',
+        describe: ' Group id',
+        type: 'string',
+        default: Vcn.DEFAULTS.groupId
     })
     .option('p', {
         alias: 'password',
@@ -55,10 +64,12 @@ var argv = require('yargs')
     .argv;
 
 
-
-
 //TODO: We should check to see if the filepath exists
 // console.log(argv);
 if(argv.filepath) argv.filepath = resolve(argv.filepath);
 
-require('../lib').exec(argv._[0], argv);
+var cmd = argv._[0];
+Vcn.exec(cmd, argv).then(function(data){
+    if(cmd !== 'list') return;
+    require('./list')(data);
+});
