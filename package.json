@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "aws-credentials": "0.0.1",
+    "awscred": "^1.1.0",
     "bluebird": "^3.0.5",
     "debug": "^2.2.0",
     "gextend": "^0.1.6",
