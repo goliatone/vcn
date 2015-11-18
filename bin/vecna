@@ -14,9 +14,37 @@ require('yargonaut')
   .helpStyle('green.bold')
   .style('yellow', 'required');
 
+
+var resolve = require('path').resolve;
+
 var argv = require('yargs')
     .usage('Usage: $0 <command> [options]')
-    .command('initialize', 'Create something')
+    .command('put', 'Encrypt and store file in bucket')
+    .command('get', 'Retrieve and decrypt file from bucket')
+    .option('b',{
+        alias:'bucket',
+        describe: 'Bucket name',
+        type: 'string',
+        required: true
+    })
+    .option('f', {
+        alias:'filepath',
+        describe: 'Path to write or read file',
+        type: 'string',
+        required: true
+    })
+    .option('i', {
+        alias: 'id',
+        describe: 'Secret identifier',
+        type: 'string',
+        required: true
+    })
+    .option('p', {
+        alias: 'password',
+        describe: 'Secret password',
+        type: 'string',
+        required: true
+    })
     .version( function() {
   		return 'cicerone version: ' + require( '../package' ).version;
     })
@@ -27,4 +55,10 @@ var argv = require('yargs')
     .argv;
 
 
-console.log(argv);
+
+
+//TODO: We should check to see if the filepath exists
+// console.log(argv);
+argv.filepath = resolve(argv.filepath);
+
+require('../lib').exec(argv._[0], argv);
