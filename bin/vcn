@@ -12,11 +12,15 @@
 require('yargonaut')
   .style('cyan')
   .helpStyle('green.bold')
-  .style('yellow', 'required');
-
+  .style('yellow', 'required')
+  .errorsStyle('red.bold');
 
 var resolve = require('path').resolve,
-    Vcn = require('../lib');
+    Vcn = require('../lib'),
+    pkg = require('../package.json'),
+    updateNotifier = require('update-notifier');
+
+updateNotifier({pkg: pkg}).notify();
 
 var argv = require('yargs')
     .usage('Usage: $0 <command> [options]')
@@ -55,7 +59,7 @@ var argv = require('yargs')
         required: true
     })
     .version( function() {
-  		return 'cicerone version: ' + require( '../package' ).version;
+  		return 'vcn version: ' + pkg.version;
     })
     .help('h')
     .alias('h', 'help')
