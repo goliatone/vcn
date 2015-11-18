@@ -59,6 +59,6 @@ var argv = require('yargs')
 
 //TODO: We should check to see if the filepath exists
 // console.log(argv);
-argv.filepath = resolve(argv.filepath);
+if(argv.filepath) argv.filepath = resolve(argv.filepath);
 
 require('../lib').exec(argv._[0], argv);
