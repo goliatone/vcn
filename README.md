@@ -71,6 +71,33 @@ _(Coming soon)_
 * Review `aws-credentials` module, we had to revers order of loaders.
 * Use AWS kms :)
 * Figure out better name
+* Add progress info
+
+npm install --save progress
+
+```js
+var ProgressBar = require('progress');
+var barOpts = {
+   width: 20,
+   total: fileSize,
+   clear: true
+};
+var bar = new ProgressBar(' uploading [:bar] :percent :etas', barOpts);
+var emitter = client.putFile...
+emitter.on('progress', function(p){
+    bar.tick(p.percent);
+});
+```
+
+Require password with prompt:
+```js
+var prompt = require('co-prompt');
+co(function *() {
+      var username = yield prompt('username: ');
+      var password = yield prompt.password('password: ');
+       console.log('user: %s pass: %s file: %s',
+          username, password, file);
+});
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
