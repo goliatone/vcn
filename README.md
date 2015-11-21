@@ -64,17 +64,17 @@ vcn get -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
 _(Coming soon)_
 
 ## TODO
-* Use `.vcnrc`:
+[ ] Use `.vcnrc`:
     * default bucket
     * default password
     * AWS credentials
-* Review `aws-credentials` module, we had to revers order of loaders.
-* Use AWS kms :)
-* Figure out better name
-* Add progress info
-* Handle all the non OK status codes!
-* Handle non existing buckets
-* Handle wrong password? how do we know?
+[x] Review `aws-credentials` module, we had to revers order of loaders.
+[ ] Use AWS kms :)
+[ ] Figure out better name
+[x] Add progress info
+[x] Handle all the non OK status codes!
+[ ] Handle non existing buckets
+[ ] Handle wrong password? how do we know?
 
 npm install --save progress
 
