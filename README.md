@@ -72,6 +72,9 @@ _(Coming soon)_
 * Use AWS kms :)
 * Figure out better name
 * Add progress info
+* Handle all the non OK status codes!
+* Handle non existing buckets
+* Handle wrong password? how do we know?
 
 npm install --save progress
 
