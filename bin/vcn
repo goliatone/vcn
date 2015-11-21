@@ -20,8 +20,14 @@ var resolve = require('path').resolve,
     pkg = require('../package.json'),
     updateNotifier = require('update-notifier');
 
+/**********************************
+ * NOTIFY IF WE HAVE NEW VERSION.
+**********************************/
 updateNotifier({pkg: pkg}).notify();
 
+/**********************************
+ * SETUP FOR ARGUMENT PARSING
+**********************************/
 var argv = require('yargs')
     .usage('Usage: $0 <command> [options]')
     .command('put', 'Encrypt and store file in bucket')
