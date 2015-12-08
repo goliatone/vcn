@@ -86,4 +86,7 @@ Vcn.exec(cmd, argv).then(function(data){
         'Path': 'Key',
         'Date': 'LastModified'
     })(data);
+}).catch(function(e){
+    console.error('Error executing command.');
+    console.error(e.message);
 });
