@@ -64,18 +64,19 @@ vcn get -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
 _(Coming soon)_
 
 ## TODO
-[ ] Use `.vcnrc`:
+- Use `.vcnrc`:
     * default bucket
     * default password
     * AWS credentials
-[x] Review `aws-credentials` module, we had to revers order of loaders.
-[ ] Use AWS kms :)
-[ ] Figure out better name
-[x] Add progress info
-[x] Handle all the non OK status codes!
-[ ] Handle non existing buckets
-[ ] Handle wrong password? how do we know?
+- ~~Review `aws-credentials` module, we had to revers order of loaders.~~
+- Use AWS kms :)
+- Figure out better name
+- Add progress info
+- Handle all the non OK status codes!
+- Handle non existing buckets
+- Handle wrong password? how do we know?
 
+<!--
 npm install --save progress
 
 ```js
@@ -101,6 +102,7 @@ co(function *() {
        console.log('user: %s pass: %s file: %s',
           username, password, file);
 });
+-->
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
