@@ -1,6 +1,6 @@
 # vcn
 
-Dumb [quasy] secret manager.
+Dumb [quasy] secret manager. Intended to share configuration files between team members. It uses AWS S3 to store encrypted files.
 
 **vecna**:
 > The fictional character Vecna (/ˈvɛk nɑː/ vek-nah[1]) has been named as one of the greatest villains in the Dungeons & Dragons roleplaying game.
