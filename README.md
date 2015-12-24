@@ -1,6 +1,6 @@
 # vcn
 
-Dumb [quasy] secret manager. Intended to share configuration files between team members. It uses AWS S3 to store encrypted files.
+Dumb [quasi] secret manager. Intended to share configuration files between team members. It uses AWS S3 to store encrypted files.
 
 **vecna**:
 > The fictional character Vecna (/ˈvɛk nɑː/ vek-nah[1]) has been named as one of the greatest villains in the Dungeons & Dragons roleplaying game.
@@ -50,7 +50,7 @@ test.get('envset', 'Pa$sW07d').then(function(file){
 
 ```
 
-## Documentation
+## Examples
 
 ```
 vcn put -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
@@ -60,10 +60,16 @@ vcn put -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
 vcn get -b goliatone.vecna.io --password Pa$sW07d --id envset --filepath .envset
 ```
 
-## Examples
+## Documentation
+
 _(Coming soon)_
 
+### NOTE
+
+Currently we are not managing multiple AWS credentials in one box and we use the default set. If you are not getting the expected results ensure that your default credentials are the ones you need.
+
 ## TODO
+- Handle multiple AWS credentials in machine.
 - Use `.vcnrc`:
     * default bucket
     * default password
